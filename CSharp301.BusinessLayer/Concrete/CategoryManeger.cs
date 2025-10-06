@@ -18,6 +18,11 @@ namespace CSharp301.BusinessLayer.Concrete
             _categoryDal = categoryDal;
         }
 
+        public object GetAll()
+        {
+            return _categoryDal.GetAll();
+        }
+
         public void TDelete(Category entity)
         {
             _categoryDal.Delete(entity);

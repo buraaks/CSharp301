@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace CSharp301.BusinessLayer.Abstract
 {
-    public interface ICategoryService: IGenericService<Category>
+    public interface ICategoryService : IGenericService<Category>
     {
+        object GetAll();
     }
 }
