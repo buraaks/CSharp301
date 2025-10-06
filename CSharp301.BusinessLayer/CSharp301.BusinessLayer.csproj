@@ -41,12 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICustomerService.cs" />
+    <Compile Include="Abstract\IGenericService.cs" />
+    <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\IOrderService.cs" />
+    <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Concrete\CategoryManeger.cs" />
+    <Compile Include="Concrete\CustomerManager.cs" />
+    <Compile Include="Concrete\OrderManager.cs" />
+    <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CSharp301.DataAccessLayer\CSharp301.DataAccessLayer.csproj">
       <Project>{05f7076a-301c-4bf2-9aec-32a646852d26}</Project>
       <Name>CSharp301.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CSharp301.EntityLayer\CSharp301.EntityLayer.csproj">
+      <Project>{22B7EE41-1816-4B22-BD5A-A53606A3D931}</Project>
+      <Name>CSharp301.EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
