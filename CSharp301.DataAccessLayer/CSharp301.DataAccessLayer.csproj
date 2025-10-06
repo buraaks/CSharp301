@@ -58,6 +58,11 @@
     <Compile Include="Abstract\IOrderDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Context\KampContext.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
+    <Compile Include="EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="EntityFramework\EfCustomerDal.cs" />
+    <Compile Include="EntityFramework\EfOrderDal.cs" />
+    <Compile Include="EntityFramework\EfProductDal.cs" />
     <Compile Include="Migrations\202509301021197_InitialCreate.cs" />
     <Compile Include="Migrations\202509301021197_InitialCreate.Designer.cs">
       <DependentUpon>202509301021197_InitialCreate.cs</DependentUpon>
@@ -80,9 +85,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EntityFramework\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202509301021197_InitialCreate.resx">
       <DependentUpon>202509301021197_InitialCreate.cs</DependentUpon>
