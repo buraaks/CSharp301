@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSharp301.EntityLayer.Concrete
+{
+    public class Product
+    {
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+        public int porductStock { get; set; }
+        public decimal ProductPrice { get; set; }
+        public string productDescription { get; set; }
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
+        public List<Order> Orders { get; set; }
+    }
+}
