@@ -1,6 +1,8 @@
 ﻿using CSharp301.DataAccessLayer.Abstract;
+using CSharp301.DataAccessLayer.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,30 +11,43 @@ namespace CSharp301.DataAccessLayer.Repositories
 {
     public class GenericRepository<T> : IGenericDal<T> where T : class, new()
     {
-        public GenericRepository() { }
-        public void Delete(int id)
+        KampContext context = new KampContext();
+        private readonly DbSet<T> _object;
+
+        public GenericRepository()
         {
-            throw new NotImplementedException();
+            _object = context.Set<T>();
+        }
+
+        public void Delete(T entity)
+        {
+            var deletedEntity = context.Entry(entity);
+            deletedEntity.State = EntityState.Deleted;
+            context.SaveChanges();
         }
 
         public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _object.ToList();
         }
 
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+            return _object.Find(id);
         }
 
         public void Insert(T entity)
         {
-            throw new NotImplementedException();
+            var addedEntity = context.Entry(entity);
+            addedEntity.State = EntityState.Added;
+            context.SaveChanges();
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            var updatedEntity = context.Entry(entity);  
+            updatedEntity.State = EntityState.Modified;
+            context.SaveChanges();
         }
     }
 }
